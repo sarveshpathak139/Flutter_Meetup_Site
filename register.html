@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <title>Registration</title>
+    <link rel="shortcut icon" href="smalllogo.jpg" type="image/x-icon">
+</head>
+<style>
+    footer {
+        margin-top: 300px;
+    }
+    
+    form {
+        margin-top: 50px;
+        margin-left: 20px;
+        border-radius: 2px;
+    }
+    
+    button.btn {
+        background-color: #3897f0;
+        border: 1px solid #3897f0;
+        border-radius: 4px;
+        color: white;
+        position: relative;
+        margin-left: 69px;
+        font-size: 20px;
+    }
+    
+    input,
+    select {
+        border-radius: 3px;
+        margin: 3px;
+        font-size: 16px;
+        padding: 5px;
+        margin: 10px
+    }
+    
+    select {
+        margin-left: 35px;
+        font-size: 20px;
+    }
+    
+    .form {
+        border: 2px solid #3897f0;
+        margin-left: 400px;
+        width: 300px;
+        margin-top: 50px;
+        border-radius: 20px;
+        box-shadow: 10px 10px gray;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <nav>
+            <img src="logo.jpg" alt="" width="100">
+        </nav>
+    </div>
+
+    <div class="form">
+        <form action="#" name="registrationform" onsubmit="return validateform()">
+            <input type="text" placeholder="Enter Full Name" id="name"><br>
+            <span id="n"></span>
+            <br>
+            <input type="text" placeholder="Enter Email Address" id="email"><br>
+            <span id="e"></span>
+            <br>
+            <input type="text" placeholder="Enter Mobile Number" id="mobileno"><br>
+            <span id="mnn"></span>
+            <br>
+            <input type="text" placeholder="Enter College Name" id="college"><br>
+            <span id="college"></span>
+            <br>
+            <select name="qualification" id="">
+                    <option>Under Graduate</option>
+                    <option>Graduate</option>
+                </select><br>
+            <br>
+            <button class="btn" type="submit">Submit</button>
+
+        </form>
+
+    </div>
+    <br>
+    <br>
+    <script>
+        function validateform() {
+            var x = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var e = document.registrationform.email.value;
+            var mn = document.getElementById("mobileno").value;
+            var cl = document.getElementById("college").value;
+
+            if (x == "" || !isNaN(x) || x.lenght < 2 || x.lenght > 20) {
+                document.getElementById('n').innerHTML = "Please enter name properly";
+                return false;
+            }
+            if (email == "" || e.indexOf("@") <= 0) {
+                document.getElementById('e').innerHTML = "Please enter valid email";
+                return false;
+            }
+            if (mn == "" || mn.lenght < 10 || mn.lenght > 10) {
+                document.getElementById('mnn').innerHTML = "Please enter valid mobile number";
+                return false;
+            }
+            if (cl == "" || cl.lenght < 5 || cl.lenght > 50) {
+                document.getElementById('college').innerHTML = "Please enter college name properly";
+                return false;
+            }
+        }
+    </script>
+    <footer>
+        <div class="footer">
+            <hr>
+            <h3 align="center">&copy; Flutter Meetup 2019-20 &#9829; TheCodingCompany &amp; ppcorporation </h3>
+        </div>
+    </footer>
+</body>
+
+</html>
